@@ -1,169 +1,21 @@
-## WELCOME TO ( সহজ সরল সিম্পল ) ASSIGNMENT-006
 
-### 📅 Deadline For 60 marks: 9th September, 2025 (11:59 pm ⏱️)
+## 7) Answers to the following questions are given below: -
 
-### 📅 Deadline For 50 marks : 13th September , 2025 (6:00 pm⏱️)
+## 1) What is the difference between var, let, and const?
+### Ans: The main differences between var, let, and const in JavaScript are their scope, whether they can be reassigned or re-declared, and their hoisting behavior. var is function-scoped, can be re-declared and reassigned, and is initialized with undefined at the top of its scope. let is block-scoped, can be reassigned but not re-declared, and is not initialized until its declaration. const is also block-scoped, cannot be reassigned or re-declared, and must be initialized when declared.  
 
-### 📅 Deadline For 30 marks: Any time after 13the September , 2025 (6:01 pm⏱️).
+## 2) What is the difference between map(), forEach(), and filter()? 
+### Ans: forEach() will not return anything. forEach() returns undefined. filter() method will return an array of matching elements else will return an empty array if no matching happens. If you have a requirement to modify the current array and are expecting a modified one, then you should go with map() 
 
----
-# Green Earth
+## 3) What are arrow functions in ES6?
+### Ans: Arrow functions, introduced in ECMAScript 2015 (ES6), provide a concise syntax for writing function expressions in JavaScript. They offer a shorter and more elegant way to define functions compared to traditional function expressions.
 
+## 4) How does destructuring assignment work in ES6?
+### Ans: Destructuring assignment in ES6 (ECMAScript 2015) provides a concise and convenient way to extract values from arrays or properties from objects and assign them to distinct variables. It simplifies code by reducing the need for repetitive access to array elements or object properties. 
 
-## Private Repository: https://classroom.github.com/a/nVZrg5R9 
+## 5) Explain template literals in ES6. How are they different from string concatenation?
+### Ans: Template literals in ES6 are a modern way of writing strings in JavaScript. They use backticks instead of single or double quotes. The biggest advantage is that you can directly insert variables and expressions inside the string using ${ }.
 
-## Alternative Private Repository: https://classroom.github.com/a/KCGI14ST 
+### They are also useful for writing multi-line strings without needing special characters like \n. This makes the code more readable and easier to maintain.
 
-## Alternative Private Repository: https://classroom.github.com/a/JMuIYqgK 
-
-
----
-🌴 API Endpoints
----
-1. Get 🌴All Plants
-```bash
-https://openapi.programming-hero.com/api/plants
-```
-
-2. Get 🌴All categories <br/>
-```bash
-https://openapi.programming-hero.com/api/categories
-```
-
-
-3. Get 🌴plants by categories <br/>
-```bash
-https://openapi.programming-hero.com/api/category/${id}
-```
-
-```bash
-https://openapi.programming-hero.com/api/category/1
-```
-
-4. Get 🌴Plants Detail <br/>
-
-```bash
-https://openapi.programming-hero.com/api/plant/${id}
-```
-
-```bash
-https://openapi.programming-hero.com/api/plant/1
-```
----
-
-
-
-
-## ✅ Main Requirements 
-
-#### 1) Navbar
-
-- Website **logo/name** on the **left**  
-- **Menu items** in the **center** 
-- **Plant a Tree button** on the **right** 
-
-#### 2) Banner 
-- A **background image**  
-- A **title** and **subtitle**  
-- A **centered button**  
-
-#### 3) About Campaign
-- **Section heading**  
-- **Image on the left**, **text on the right**  
-
-#### 4) Our Impact Section 
-- Show **3 cards** with campaign **statistics**  
-
-#### 5) Plant a Tree Today Section & Footer
-- **Form**: Name, Email, Number of Trees  
-- **Footer** with copyright info 
-
-#### 6) Responsiveness 
-- Website must be **mobile responsive**  
-
----
-#### 7) Create a README file to answer the following question-
-
-
-#### 1) What is the difference between var, let, and const?
-
-#### 2) What is the difference between map(), forEach(), and filter()? 
-
-#### 3) What are arrow functions in ES6?
-
-#### 4) How does destructuring assignment work in ES6?
-
-#### 5) Explain template literals in ES6. How are they different from string concatenation?
-
-## ⚙️ Functionalities 
-
-1) Category Loading 
-Load Tree Categories dynamically on the left side.
-
-2) Category Click → Tree Data 
-On clicking a category: load trees of that category.
-
-Display in a 3-column card layout.
-
-3) Card Contents 
- Each card includes:
-
-        - Image
-
-        -  Name
-
-        - Short description
-
-        - Category
-
-        - Price
-
-        - Add to Cart button
-
-4) Modal on Card Click 
-Clicking a tree name on a card opens a modal with full tree details.
-
-
-##  🧪 Challenges 
-
-
-    1) Add to Cart 
-    Clicking Add to Cart: - Adds the tree to Cart List
-                          - Shows tree name 
-
-    2) Total Calculation 
-    Calculate total price of trees in cart.
-
-    3) Remove from Cart 
-    Clicking ❌ removes tree and deducts price from total.
-
-    4) Loading Spinner
-    Show spinner while data is loading.
-
-    5) Active Button State 
-    Highlight active category button when selected.
-
-
-
-🧰 Technology Stack:
-        
-        HTML
-
-        CSS (Vanilla / Tailwind / DaisyUI)
-
-        JavaScript (Vanilla only, no frameworks)
-
-📌 Rules
-✅ At least 5 meaningful commits
-
-❌ No dummy text or Lorem Ipsum — must use relevant content
-
-
-
-
-
-## 🔗 Submission
-- **Live Link :** YOUR_DEPLOYED_URL_HERE  
-- **GitHub Private Repository:** YOUR_REPO_URL_HERE  
-
----
+### String concatenation (the old way) joins strings and variables together using the + operator. It works, but becomes messy and hard to read when you have long strings, many variables, or multiple lines.
