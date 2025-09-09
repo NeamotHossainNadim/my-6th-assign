@@ -4,9 +4,9 @@ const cartTotalElement = document.getElementById("cart-total");
 const categoryList = document.querySelector("aside ul");
 
 let cart = [];
-let categoriesMap = {}; // { "Fruit Tree": 1, "Flowering Tree": 2, ... }
+let categoriesMap = {}; 
 
-// -------------------- Spinner Element --------------------
+
 function showSpinner() {
   plantsContainer.innerHTML = `
     <div class="col-span-full flex justify-center items-center py-10">
@@ -15,7 +15,7 @@ function showSpinner() {
   `;
 }
 
-// -------------------- Fetch Helper --------------------
+
 async function fetchData(url) {
   try {
     showSpinner();
@@ -28,13 +28,13 @@ async function fetchData(url) {
   }
 }
 
-// -------------------- Load All Plants --------------------
+
 async function loadPlants() {
   const data = await fetchData("https://openapi.programming-hero.com/api/plants");
   displayPlants(data?.plants || []);
 }
 
-// -------------------- Load Categories --------------------
+
 async function loadCategories() {
   const data = await fetchData("https://openapi.programming-hero.com/api/categories");
   const categories = data?.categories || [];
@@ -57,13 +57,13 @@ async function loadCategories() {
   categoryList.innerHTML = html;
 }
 
-// -------------------- Load Plants by Category --------------------
+
 async function loadCategoryPlants(categoryId) {
   const data = await fetchData(`https://openapi.programming-hero.com/api/category/${categoryId}`);
   displayPlants(data?.plants || []);
 }
 
-// -------------------- Display Plants --------------------
+
 function displayPlants(plants) {
   if (!plants.length) {
     plantsContainer.innerHTML = `<p class="text-gray-500 col-span-full">No plants found</p>`;
@@ -91,7 +91,7 @@ function displayPlants(plants) {
   `).join("");
 }
 
-// -------------------- Cart Functions --------------------
+
 function addToCart(plant) {
   const existing = cart.find(item => item.id === plant.id);
   if (existing) {
@@ -133,17 +133,17 @@ function renderCart() {
   cartTotalElement.textContent = `৳${total}`;
 }
 
-// -------------------- Global Event Delegation --------------------
+
 document.body.addEventListener("click", e => {
   const target = e.target;
 
-  // Category filter
+
   if (target.closest("aside ul li a")) {
     e.preventDefault();
     const btn = target.closest("a");
     const categoryId = btn.dataset.id;
 
-    // active styling reset
+    
     document.querySelectorAll("aside ul li a").forEach(b => b.classList.remove("bg-green-700", "text-white"));
     btn.classList.add("bg-green-700", "text-white");
 
@@ -151,7 +151,7 @@ document.body.addEventListener("click", e => {
     else loadCategoryPlants(categoryId);
   }
 
-  // Add to cart
+ 
   if (target.dataset.action === "add-to-cart") {
     const id = parseInt(target.dataset.id);
     const name = target.dataset.name;
@@ -159,13 +159,12 @@ document.body.addEventListener("click", e => {
     addToCart({ id, name, price });
   }
 
-  // Remove from cart
+  
   if (target.classList.contains("remove-btn")) {
     const id = parseInt(target.dataset.id);
     removeFromCart(id);
   }
 });
 
-// -------------------- Init --------------------
 loadCategories();
 loadPlants();
